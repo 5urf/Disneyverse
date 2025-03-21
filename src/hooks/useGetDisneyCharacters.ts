@@ -1,7 +1,7 @@
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { fetchDisneyCharacters } from "../api/disneyApi";
 
-const useDisneyCharacters = () => {
+const useGetDisneyCharacters = () => {
   return useQuery({
     queryKey: ["characters"],
     queryFn: fetchDisneyCharacters,
@@ -9,4 +9,4 @@ const useDisneyCharacters = () => {
   });
 };
 
-export default useDisneyCharacters;
+export default useGetDisneyCharacters;
