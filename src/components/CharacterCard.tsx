@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import styled from "styled-components";
 import useValidImage from "../hooks/useImageValidation";
 
@@ -40,23 +41,24 @@ const CardName = styled.p`
 `;
 
 interface ICharacterCardProps {
-  name: string;
-  imageUrl: string;
+  character: DisneyCharacter;
 }
 
 const CharacterCard = ({
-  name,
-  imageUrl,
+  character,
 }: ICharacterCardProps): React.JSX.Element | null => {
+  const { id, imageUrl, name } = character;
   const { data: isValid } = useValidImage(imageUrl);
 
   if (!isValid) return null;
 
   return (
-    <Card>
-      <CardImage src={imageUrl} alt={name} />
-      <CardName>{name}</CardName>
-    </Card>
+    <Link key={id} to={`character/${id}`}>
+      <Card>
+        <CardImage src={imageUrl} alt={name} />
+        <CardName>{name}</CardName>
+      </Card>
+    </Link>
   );
 };
 

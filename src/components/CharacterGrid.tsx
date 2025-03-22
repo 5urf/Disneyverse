@@ -1,6 +1,6 @@
-import { Link } from "react-router";
 import styled from "styled-components";
 import CharacterCard from "./CharacterCard";
+import SkeletonCharacterGrid from "./skeletons/SkeletonCharacterGrid";
 
 const CardGrid = styled.div`
   display: grid;
@@ -12,18 +12,22 @@ const CardGrid = styled.div`
 
 interface ICharacterGridProps {
   characters: DisneyCharacter[];
+  isLoading: boolean;
 }
 
 const CharacterGrid = ({
   characters,
+  isLoading,
 }: ICharacterGridProps): React.JSX.Element | null => {
   return (
     <CardGrid>
-      {characters.map((character) => (
-        <Link key={character.id} to={`character/${character.id}`}>
-          <CharacterCard name={character.name} imageUrl={character.imageUrl} />
-        </Link>
-      ))}
+      {isLoading ? (
+        <SkeletonCharacterGrid />
+      ) : (
+        characters.map((character) => (
+          <CharacterCard key={character.id} character={character} />
+        ))
+      )}
     </CardGrid>
   );
 };

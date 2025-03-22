@@ -15,12 +15,12 @@ const Home = () => {
     ?.filter((characters) => characters.imageUrl)
     .slice(0, 50);
 
-  //NOTE - 스켈레톤 UI 적용할 것
-  if (isLoading || !filteredDisneyCharacters) return <p>Loading...</p>;
-
   return (
     <HomeContainer>
-      <CharacterGrid characters={filteredDisneyCharacters} />
+      <CharacterGrid
+        characters={filteredDisneyCharacters ?? []}
+        isLoading={isLoading}
+      />
     </HomeContainer>
   );
 };
