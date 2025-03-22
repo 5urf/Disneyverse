@@ -44,6 +44,7 @@ const CharacterFilm = styled.li`
 
   transition: color 0.2s ease, text-decoration 0.15s ease;
 
+  text-align: center;
   &:hover {
     color: ${({ theme }) => theme.hoverColor};
   }

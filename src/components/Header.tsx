@@ -9,18 +9,20 @@ const StyledHeader = styled.header`
   padding: 2rem 0;
 `;
 
-const HeaderTxtWrapper = styled.button<{ $isDetail: boolean }>`
+const HeaderTxtBtn = styled.button<{ $isDetail: boolean }>`
   background: none;
   border: none;
   padding: 0;
   cursor: ${({ $isDetail }) => ($isDetail ? "pointer" : "default")};
-`;
-
-const HeaderTxt = styled.p`
   text-shadow: 0.4rem 0.4rem 0.6rem rgba(0, 0, 0, 0.5);
   color: ${({ theme }) => theme.textColor};
   font-weight: 600;
   font-size: 3.6rem;
+  transition: color 0.15s ease-in-out;
+
+  &:hover {
+    color: ${(props) => props.$isDetail && props.theme.accentColor};
+  }
 `;
 
 const PreviousBtn = styled.button`
@@ -50,9 +52,9 @@ const Header = () => {
   return (
     <StyledHeader>
       {detailMatch && <PreviousBtn onClick={onPrevious}>←</PreviousBtn>}
-      <HeaderTxtWrapper $isDetail={isDetail} onClick={onPrevious}>
-        <HeaderTxt>Disneyverse</HeaderTxt>
-      </HeaderTxtWrapper>
+      <HeaderTxtBtn $isDetail={isDetail} onClick={onPrevious}>
+        Disneyverse
+      </HeaderTxtBtn>
     </StyledHeader>
   );
 };

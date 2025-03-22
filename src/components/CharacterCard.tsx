@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import styled from "styled-components";
-import useValidImage from "../hooks/useImageValidation";
+import useValidImage from "../hooks/useValidImage";
 
 const Card = styled.div`
   display: flex;
