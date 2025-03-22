@@ -16,7 +16,7 @@ const Card = styled.div`
 
   &:hover {
     transform: translateY(-5px);
-    background-color: ${(props) => props.theme.cardHoverColor};
+    background-color: ${(props) => props.theme.hoverColor};
     box-shadow: 0 0.6rem 1rem rgba(0, 0, 0, 0.2);
     p {
       color: ${(props) => props.theme.accentColor};

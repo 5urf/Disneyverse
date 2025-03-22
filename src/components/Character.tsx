@@ -41,10 +41,10 @@ const CharacterFilms = styled.ul`
 const CharacterFilm = styled.li`
   font-size: 1.6rem;
 
-  transition: color 0.2s ease, text-decoration 0.2s ease;
+  transition: color 0.2s ease, text-decoration 0.15s ease;
 
   &:hover {
-    color: ${(props) => props.theme.cardHoverColor};
+    color: ${(props) => props.theme.hoverColor};
   }
 `;
 
