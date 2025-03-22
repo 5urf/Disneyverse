@@ -10,7 +10,6 @@ const HomeContainer = styled.div`
 
 const Home = () => {
   const { data: disneyCharacters, isLoading } = useGetDisneyCharacters();
-  //NOTE - 임시
   const filteredDisneyCharacters = disneyCharacters
     ?.filter((characters) => characters.imageUrl)
     .slice(0, 101);
