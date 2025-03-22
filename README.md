@@ -8,4 +8,4 @@ Assignment 15 Code Challenge
 - **React**
 - **React Router**
 - **TanStack Query**
-- **Styled Components**
+- **Styled-Components**
