@@ -28,7 +28,7 @@ const CharacterAnchor = styled.a`
 
 const CharacterName = styled.h3`
   font-size: 3.6rem;
-  font-weight: 600;
+  font-weight: 500;
 `;
 
 const CharacterFilms = styled.ul`
@@ -49,6 +49,16 @@ const CharacterFilm = styled.li`
   }
 `;
 
+const StyledHr = styled.hr`
+  width: 100%;
+  margin: 0;
+`;
+
+const CharacterAppearances = styled.h4`
+  font-size: 2.6rem;
+  font-weight: 400;
+`;
+
 interface ICharacterProps {
   character: IDisneyCharacterDetail;
 }
@@ -56,12 +66,19 @@ interface ICharacterProps {
 const Character = ({
   character: { name, imageUrl, films, sourceUrl },
 }: ICharacterProps) => {
+  const getAppearanceLabel = (length: number) => {
+    return length > 1 ? "Appearances" : "Appearance";
+  };
   return (
     <CharacterContainer>
       <CharacterImg src={imageUrl} alt={name} />
       <CharacterAnchor href={sourceUrl} target='_blank'>
         <CharacterName>{name}</CharacterName>
       </CharacterAnchor>
+      <StyledHr />
+      <CharacterAppearances>
+        {getAppearanceLabel(films.length)}
+      </CharacterAppearances>
       <CharacterFilms>
         {films.map((film, index) => (
           <CharacterFilm key={index}>{film}</CharacterFilm>
