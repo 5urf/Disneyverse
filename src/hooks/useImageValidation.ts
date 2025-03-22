@@ -1,13 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
+import { fetchValidImage } from "../utils/validateImage";
 
 const useValidImage = (imageUrl: string) => {
-  //FIXME - console.error 처리
   return useQuery({
     queryKey: ["imageValidation", imageUrl],
-    queryFn: async () => {
-      const response = await fetch(imageUrl, { method: "HEAD" });
-      return response.ok;
-    },
+    queryFn: () => fetchValidImage(imageUrl),
     enabled: !!imageUrl,
   });
 };

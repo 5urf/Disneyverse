@@ -13,7 +13,7 @@ const Home = () => {
   //NOTE - 임시
   const filteredDisneyCharacters = disneyCharacters
     ?.filter((characters) => characters.imageUrl)
-    .slice(0, 50);
+    .slice(0, 101);
 
   return (
     <HomeContainer>
