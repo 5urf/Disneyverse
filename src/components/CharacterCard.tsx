@@ -45,9 +45,8 @@ interface ICharacterCardProps {
 }
 
 const CharacterCard = ({
-  character,
+  character: { id, imageUrl, name },
 }: ICharacterCardProps): React.JSX.Element | null => {
-  const { id, imageUrl, name } = character;
   const { data: isValid } = useValidImage(imageUrl);
 
   if (!isValid) return null;

@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router";
 import App from "./App";
 import Detail from "./pages/Detail";
 import Home from "./pages/Home";
+import NotFoundPage from "./pages/NotFoundPage";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
         element: <Detail />,
       },
     ],
+    errorElement: <NotFoundPage />,
   },
 ]);
 
