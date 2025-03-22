@@ -33,31 +33,11 @@ const SkeletonName = styled.div`
   border-radius: 1rem;
 `;
 
-const SkeletonFilms = styled.ul`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-`;
-
-const SkeletonFilm = styled.li`
-  width: 80%;
-  height: 1.6rem;
-  background: ${({ theme }) => theme.bgGradient};
-  background-size: 200% 100%;
-  animation: ${skeletonAnimation} 1.5s infinite linear;
-  border-radius: 1rem;
-`;
-
 const SkeletonCharacter = () => {
   return (
     <SkeletonCharacterContainer>
       <SkeletonImage />
       <SkeletonName />
-      <SkeletonFilms>
-        <SkeletonFilm />
-      </SkeletonFilms>
     </SkeletonCharacterContainer>
   );
 };
