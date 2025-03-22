@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { useMatch, useNavigate } from "react-router";
 import styled from "styled-components";
 
@@ -10,11 +9,11 @@ const StyledHeader = styled.header`
   padding: 2rem 0;
 `;
 
-const HeaderTxtWrapper = styled.button<{ isDetail: boolean }>`
+const HeaderTxtWrapper = styled.button<{ $isDetail: boolean }>`
   background: none;
   border: none;
   padding: 0;
-  cursor: ${(props) => (props.isDetail ? "pointer" : "default")};
+  cursor: ${(props) => (props.$isDetail ? "pointer" : "default")};
 `;
 
 const HeaderTxt = styled.p`
@@ -44,19 +43,14 @@ const PreviousBtn = styled.button`
 
 const Header = () => {
   const navigation = useNavigate();
-  const [isDetail, setIsDetail] = useState(false);
   const detailMatch = useMatch("character/:id");
+  const isDetail = Boolean(detailMatch);
   const onPrevious = () => isDetail && navigation("/");
-
-  useEffect(() => {
-    if (detailMatch) setIsDetail(true);
-    else setIsDetail(false);
-  }, [detailMatch]);
 
   return (
     <StyledHeader>
-      {isDetail && <PreviousBtn onClick={onPrevious}>←</PreviousBtn>}
-      <HeaderTxtWrapper isDetail={isDetail} onClick={onPrevious}>
+      {detailMatch && <PreviousBtn onClick={onPrevious}>←</PreviousBtn>}
+      <HeaderTxtWrapper $isDetail={isDetail} onClick={onPrevious}>
         <HeaderTxt>Disneyverse</HeaderTxt>
       </HeaderTxtWrapper>
     </StyledHeader>
