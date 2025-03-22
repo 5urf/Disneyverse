@@ -1,6 +1,7 @@
 import { useLocation, useParams } from "react-router";
 import styled from "styled-components";
 import Character from "../components/Character";
+import SkeletonCharacter from "../components/skeletons/SkeletonCharacter";
 import useGetDisneyCharacterDetail from "../hooks/useGetDisneyCharacterDetail";
 
 const DetailContainer = styled.div`
@@ -15,14 +16,13 @@ const DetailContainer = styled.div`
 const Detail = () => {
   const { id } = useParams();
   const { state } = useLocation();
-  console.log("📢[Detail.tsx:17]: state: ", state);
-  console.log("📢[Detail.tsx:16]: id: ", id);
-  const { data: characterData, isLoading } = useGetDisneyCharacterDetail(
-    id ?? state.id
-  );
 
-  //FIXME - 임시
-  if (isLoading || !characterData) return <div>Loading</div>;
+  const characterId = id || state.id;
+
+  const { data: characterData, isLoading } =
+    useGetDisneyCharacterDetail(characterId);
+
+  if (isLoading || !characterData) return <SkeletonCharacter />;
 
   return (
     <DetailContainer>

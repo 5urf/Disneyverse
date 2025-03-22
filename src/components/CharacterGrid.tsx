@@ -11,7 +11,7 @@ const CardGrid = styled.div`
 `;
 
 interface ICharacterGridProps {
-  characters: DisneyCharacter[];
+  characters: IDisneyCharacter[];
   isLoading: boolean;
 }
 

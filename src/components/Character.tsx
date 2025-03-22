@@ -10,6 +10,7 @@ const CharacterContainer = styled.div`
 
 const CharacterImg = styled.img`
   width: 100%;
+  max-width: 40rem;
   height: 40rem;
   object-fit: cover;
   border-radius: 2rem;
@@ -62,8 +63,8 @@ const Character = ({
         <CharacterName>{name}</CharacterName>
       </CharacterAnchor>
       <CharacterFilms>
-        {films.map((film) => (
-          <CharacterFilm>{film}</CharacterFilm>
+        {films.map((film, index) => (
+          <CharacterFilm key={index}>{film}</CharacterFilm>
         ))}
       </CharacterFilms>
     </CharacterContainer>
