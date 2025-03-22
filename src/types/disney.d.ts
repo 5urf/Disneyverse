@@ -1,10 +1,10 @@
-interface DisneyCharacter {
+interface IDisneyCharacter {
   id: number;
   name: string;
   imageUrl: string;
 }
 
-interface DisneyCharacterDetail extends DisneyCharacter {
+interface IDisneyCharacterDetail extends IDisneyCharacter {
   films: string[];
   sourceUrl: string;
 }

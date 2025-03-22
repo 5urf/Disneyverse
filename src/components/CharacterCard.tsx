@@ -41,7 +41,7 @@ const CardName = styled.p`
 `;
 
 interface ICharacterCardProps {
-  character: DisneyCharacter;
+  character: IDisneyCharacter;
 }
 
 const CharacterCard = ({
@@ -53,7 +53,7 @@ const CharacterCard = ({
   if (!isValid) return null;
 
   return (
-    <Link key={id} to={`character/${id}`}>
+    <Link key={id} to={`character/${id}`} state={{ id }}>
       <Card>
         <CardImage src={imageUrl} alt={name} />
         <CardName>{name}</CardName>
