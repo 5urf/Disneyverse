@@ -62,8 +62,8 @@ html {
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: ${(props) => props.theme.bgColor};
-  color: ${(props) => props.theme.textColor};
+  background-color: ${({ theme }) => theme.bgColor};
+  color: ${({ theme }) => theme.textColor};
 }
 
 a {

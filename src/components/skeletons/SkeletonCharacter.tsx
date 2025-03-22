@@ -18,7 +18,7 @@ const SkeletonImage = styled.div`
   max-width: 40rem;
   height: 40rem;
   border-radius: 2rem;
-  background: linear-gradient(90deg, #003b5c 25%, #006d8f 50%, #003b5c 75%);
+  background: ${({ theme }) => theme.bgGradient};
   background-size: 200% 100%;
   animation: ${skeletonAnimation} 1.5s infinite linear;
   object-fit: cover;
@@ -27,7 +27,7 @@ const SkeletonImage = styled.div`
 const SkeletonName = styled.div`
   width: 30%;
   height: 3.6rem;
-  background: linear-gradient(90deg, #003b5c 25%, #006d8f 50%, #003b5c 75%);
+  background: ${({ theme }) => theme.bgGradient};
   background-size: 200% 100%;
   animation: ${skeletonAnimation} 1.5s infinite linear;
   border-radius: 1rem;
@@ -44,7 +44,7 @@ const SkeletonFilms = styled.ul`
 const SkeletonFilm = styled.li`
   width: 80%;
   height: 1.6rem;
-  background: linear-gradient(90deg, #003b5c 25%, #006d8f 50%, #003b5c 75%);
+  background: ${({ theme }) => theme.bgGradient};
   background-size: 200% 100%;
   animation: ${skeletonAnimation} 1.5s infinite linear;
   border-radius: 1rem;

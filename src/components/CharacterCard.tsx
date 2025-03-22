@@ -16,10 +16,10 @@ const Card = styled.div`
 
   &:hover {
     transform: translateY(-5px);
-    background-color: ${(props) => props.theme.hoverColor};
+    background-color: ${({ theme }) => theme.hoverColor};
     box-shadow: 0 0.6rem 1rem rgba(0, 0, 0, 0.2);
     p {
-      color: ${(props) => props.theme.accentColor};
+      color: ${({ theme }) => theme.accentColor};
     }
   }
 `;
@@ -37,7 +37,7 @@ const CardName = styled.p`
   margin-bottom: 2rem;
   font-size: 1.4rem;
   font-weight: 600;
-  color: ${(props) => props.theme.textColor};
+  color: ${({ theme }) => theme.textColor};
 `;
 
 interface ICharacterCardProps {

@@ -6,5 +6,6 @@ declare module "styled-components" {
     textColor: React.CSSProperties["color"];
     accentColor: React.CSSProperties["color"];
     hoverColor: React.CSSProperties["backgroundColor"];
+    bgGradient: string;
   }
 }

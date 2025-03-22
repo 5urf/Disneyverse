@@ -22,9 +22,9 @@ interface ISkeletonContent {
 }
 
 const SkeletonContent = styled.div<ISkeletonContent>`
-  width: ${(props) => props.width || "100%"};
-  height: ${(props) => props.height || "1rem"};
-  border-radius: ${(props) => props.$borderRadius};
+  width: ${({ width }) => width || "100%"};
+  height: ${({ height }) => height || "1rem"};
+  border-radius: ${({ $borderRadius }) => $borderRadius};
   background: linear-gradient(90deg, #003b5c 25%, #006d8f 50%, #003b5c 75%);
   background-size: 200% 100%;
   animation: ${skeletonAnimation} 1.5s infinite linear;

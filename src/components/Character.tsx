@@ -20,7 +20,7 @@ const CharacterAnchor = styled.a`
   transition: color 0.15s ease-in-out;
 
   &:hover {
-    color: ${(props) => props.theme.accentColor};
+    color: ${({ theme }) => theme.accentColor};
     transition: color 0.15s ease-in-out;
     text-decoration: underline;
   }
@@ -45,7 +45,7 @@ const CharacterFilm = styled.li`
   transition: color 0.2s ease, text-decoration 0.15s ease;
 
   &:hover {
-    color: ${(props) => props.theme.hoverColor};
+    color: ${({ theme }) => theme.hoverColor};
   }
 `;
 
