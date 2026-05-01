@@ -20,6 +20,6 @@ const router = createBrowserRouter([
     ],
     errorElement: <NotFoundPage />,
   },
-]);
+], { basename: '/Disneyverse/' });
 
 export default router;
